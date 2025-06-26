@@ -1,0 +1,637 @@
+import { useState } from "react";
+import { useActiveBreakpoint } from "figma:react";
+import { defineProperties } from "figma:react";
+import { toast } from "sonner@2.0.3";
+
+function Frame2147236703Desktop() {
+  return (
+    <div className="h-[356px] relative rounded-lg shrink-0 w-[1200px]">
+      <div className="flex flex-row justify-center relative size-full">
+        <div className="box-border content-stretch flex flex-row h-[356px] items-start justify-center p-[16px] relative w-[1200px]">
+          <div className="basis-0 font-['Bebas_Neue:Regular',_sans-serif] grow h-full leading-[0] min-h-px min-w-px not-italic relative shrink-0 text-[#ffffff] text-[160px] text-center tracking-[-6.8px]">
+            <p className="block leading-[0.9]">{`Contact us. `}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Frame2147236704Desktop() {
+  return (
+    <div className="box-border content-stretch flex flex-col gap-6 h-[191px] items-center justify-start p-0 relative shrink-0 w-full">
+      <Frame2147236703Desktop />
+    </div>
+  );
+}
+
+function FormHeadingDesktop() {
+  return (
+    <div
+      className="box-border content-stretch flex flex-col gap-2 items-start justify-start leading-[0] not-italic p-0 relative shrink-0 text-[#ffffff] text-center w-full"
+      data-name="Form heading"
+    >
+      <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold relative shrink-0 text-[30px] tracking-[-0.6px] w-full">
+        <p className="block leading-[normal]">Let's talk Kortshut.</p>
+      </div>
+      <div className="font-['Inter:Regular',_sans-serif] font-normal opacity-80 relative shrink-0 text-[16px] tracking-[-0.16px] w-full">
+        <p className="block leading-[normal]">
+          This platform is shaped by the people who use it, and your feedback
+          helps us make it better for everyone. Whether you have suggestions,
+          ideas, or just want to share your experience, we're all ears. Drop us
+          a message—we'll review it and respond as soon as we can. Let's build
+          something great together.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function ContainerWrapperDesktop({ formData, setFormData, onSubmit, isLoading }) {
+  return (
+    <div
+      className="backdrop-blur-[190px] backdrop-filter bg-[rgba(255,255,255,0.04)] relative rounded-[20px] shrink-0 w-full"
+      data-name="Container Wrapper"
+    >
+      <div className="absolute border-2 border-[rgba(10,13,23,0.05)] border-solid inset-0 pointer-events-none rounded-[20px]" />
+      <div className="flex flex-row items-center relative size-full">
+        <div className="box-border content-stretch flex flex-row items-center justify-between p-[20px] relative w-full">
+          <div className="basis-0 grow min-h-px min-w-px relative shrink-0" data-name="Form wrapper">
+            <div className="relative size-full">
+              <div className="box-border content-stretch flex flex-col gap-[41px] items-start justify-start px-10 py-6 relative w-full">
+                <FormHeadingDesktop />
+                <div
+                  className="box-border content-stretch flex flex-col-reverse gap-3.5 items-start justify-start p-0 relative shrink-0 w-full"
+                  data-name="Form"
+                >
+                  <div
+                    className="box-border content-stretch flex flex-row gap-3.5 items-start justify-start order-4 p-0 relative shrink-0 w-full"
+                    data-name="Names"
+                  >
+                    <div
+                      className="basis-0 bg-[rgba(255,255,255,0.05)] grow min-h-px min-w-px relative rounded-[5px] shrink-0"
+                      data-name="Lname"
+                    >
+                      <div className="absolute border border-[rgba(255,255,255,0.2)] border-solid inset-[-1px] pointer-events-none rounded-md" />
+                      <div className="flex flex-col justify-center relative size-full">
+                        <div className="box-border content-stretch flex flex-col gap-2.5 items-start justify-center px-3.5 py-3 relative w-full">
+                          <input
+                            type="text"
+                            className="w-full bg-transparent text-white outline-none font-['Inter:Regular',_sans-serif] text-[15px] tracking-[-0.15px]"
+                            placeholder="First Name"
+                            value={formData.firstName}
+                            onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="basis-0 bg-[rgba(255,255,255,0.05)] grow min-h-px min-w-px relative rounded-[5px] shrink-0"
+                      data-name="Fname"
+                    >
+                      <div className="absolute border border-[rgba(255,255,255,0.2)] border-solid inset-[-1px] pointer-events-none rounded-md" />
+                      <div className="flex flex-col justify-center relative size-full">
+                        <div className="box-border content-stretch flex flex-col gap-2.5 items-start justify-center px-3.5 py-3 relative w-full">
+                          <input
+                            type="text"
+                            className="w-full bg-transparent text-white outline-none font-['Inter:Regular',_sans-serif] text-[15px] tracking-[-0.15px]"
+                            placeholder="Last Name"
+                            value={formData.lastName}
+                            onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="bg-[rgba(255,255,255,0.05)] order-3 relative rounded-[5px] shrink-0 w-full"
+                    data-name="Email"
+                  >
+                    <div className="absolute border border-[rgba(255,255,255,0.2)] border-solid inset-[-1px] pointer-events-none rounded-md" />
+                    <div className="flex flex-col justify-center relative size-full">
+                      <div className="box-border content-stretch flex flex-col gap-2.5 items-start justify-center px-3.5 py-3 relative w-full">
+                        <input
+                          type="email"
+                          className="w-full bg-transparent text-white outline-none font-['Inter:Regular',_sans-serif] text-[15px] tracking-[-0.15px]"
+                          placeholder="Email"
+                          value={formData.email}
+                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="bg-[rgba(255,255,255,0.05)] h-[109px] order-2 relative rounded-[5px] shrink-0 w-full"
+                    data-name="Message"
+                  >
+                    <div className="absolute border border-[rgba(255,255,255,0.2)] border-solid inset-[-1px] pointer-events-none rounded-md" />
+                    <div className="relative size-full">
+                      <div className="box-border content-stretch flex flex-col gap-2.5 h-[109px] items-start justify-start px-3.5 py-3 relative w-full">
+                        <textarea
+                          className="w-full h-full bg-transparent text-white resize-none outline-none font-['Inter:Regular',_sans-serif] text-[15px] tracking-[-0.15px]"
+                          placeholder="Message"
+                          value={formData.message}
+                          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        ></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    onClick={onSubmit}
+                    disabled={isLoading}
+                    className="bg-gradient-to-r from-[#763af5] order-1 relative rounded-[5px] shrink-0 to-[#a604f2] to-[117.18%] w-full"
+                    data-name="Submit"
+                  >
+                    <div className="flex flex-row items-center justify-center relative size-full">
+                      <div className="box-border content-stretch flex flex-row gap-2.5 items-center justify-center px-2.5 py-3 relative w-full">
+                        <div className="font-['Inter:Medium',_sans-serif] font-medium leading-[0] not-italic relative shrink-0 text-[#ffffff] text-[15px] text-left text-nowrap tracking-[-0.15px]">
+                          <p className="adjustLetterSpacing block leading-[normal] whitespace-pre">
+                            {isLoading ? "Submitting..." : "Submit"}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function BenefitsSectionDesktop({ formData, setFormData, onSubmit, isLoading }) {
+  return (
+    <div className="relative size-full" data-name="Benefits section">
+      <div className="max-w-inherit relative size-full">
+        <div className="box-border content-stretch flex flex-col items-start justify-start max-w-inherit pb-[50px] pt-0 px-0 relative size-full">
+          <Frame2147236704Desktop />
+          <ContainerWrapperDesktop formData={formData} setFormData={setFormData} onSubmit={onSubmit} isLoading={isLoading} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Frame2147236703Tablet() {
+  return (
+    <div className="relative rounded-lg shrink-0 w-full">
+      <div className="flex flex-col items-center relative size-full">
+        <div className="box-border content-stretch flex flex-col gap-6 items-center justify-start p-[16px] relative w-full">
+          <div className="font-['Bebas_Neue:Regular',_sans-serif] leading-[0] mix-blend-lighten not-italic relative shrink-0 text-[#ffffff] text-[160px] text-center tracking-[-6.8px] w-full">
+            <p className="block leading-[0.9]">{`Contact us. `}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Frame2147236704Tablet() {
+  return (
+    <div className="box-border content-stretch flex flex-col gap-[140px] items-center justify-start p-0 relative shrink-0 w-full">
+      <Frame2147236703Tablet />
+    </div>
+  );
+}
+
+function FormHeadingTablet() {
+  return (
+    <div
+      className="box-border content-stretch flex flex-col gap-2 items-start justify-start leading-[0] not-italic p-0 relative shrink-0 text-[#ffffff] text-center w-full"
+      data-name="Form heading"
+    >
+      <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold relative shrink-0 text-[30px] tracking-[-0.6px] w-full">
+        <p className="block leading-[normal]">Let's talk Kortshut.</p>
+      </div>
+      <div className="font-['Inter:Regular',_sans-serif] font-normal opacity-80 relative shrink-0 text-[16px] tracking-[-0.16px] w-full">
+        <p className="block leading-[normal]">
+          This platform is shaped by the people who use it, and your feedback
+          helps us make it better for everyone. Whether you have suggestions,
+          ideas, or just want to share your experience, we're all ears. Drop us
+          a message—we'll review it and respond as soon as we can. Let's build
+          something great together.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function ContainerWrapperTablet({ formData, setFormData, onSubmit, isLoading }) {
+  return (
+    <div
+      className="backdrop-blur-[190px] backdrop-filter bg-[rgba(255,255,255,0.04)] relative rounded-[20px] shrink-0 w-full"
+      data-name="Container Wrapper"
+    >
+      <div className="absolute border-2 border-[rgba(10,13,23,0.05)] border-solid inset-0 pointer-events-none rounded-[20px]" />
+      <div className="relative size-full">
+        <div className="box-border content-stretch flex flex-col gap-6 items-start justify-start p-[20px] relative w-full">
+          <div className="relative shrink-0 w-full" data-name="Form wrapper">
+            <div className="relative size-full">
+              <div className="box-border content-stretch flex flex-col gap-[41px] items-start justify-start px-10 py-6 relative w-full">
+                <FormHeadingTablet />
+                <div
+                  className="box-border content-stretch flex flex-col-reverse gap-3.5 items-start justify-start p-0 relative shrink-0 w-full"
+                  data-name="Form"
+                >
+                  <div
+                    className="box-border content-stretch flex flex-row gap-3.5 items-start justify-start order-4 p-0 relative shrink-0 w-full"
+                    data-name="Names"
+                  >
+                    <div
+                      className="basis-0 bg-[rgba(255,255,255,0.05)] grow min-h-px min-w-px relative rounded-[5px] shrink-0"
+                      data-name="Lname"
+                    >
+                      <div className="absolute border border-[rgba(255,255,255,0.2)] border-solid inset-[-1px] pointer-events-none rounded-md" />
+                      <div className="flex flex-col justify-center relative size-full">
+                        <div className="box-border content-stretch flex flex-col gap-2.5 items-start justify-center px-3.5 py-3 relative w-full">
+                          <input
+                            type="text"
+                            className="w-full bg-transparent text-white outline-none font-['Inter:Regular',_sans-serif] text-[15px] tracking-[-0.15px]"
+                            placeholder="First Name"
+                            value={formData.firstName}
+                            onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="basis-0 bg-[rgba(255,255,255,0.05)] grow min-h-px min-w-px relative rounded-[5px] shrink-0"
+                      data-name="Fname"
+                    >
+                      <div className="absolute border border-[rgba(255,255,255,0.2)] border-solid inset-[-1px] pointer-events-none rounded-md" />
+                      <div className="flex flex-col justify-center relative size-full">
+                        <div className="box-border content-stretch flex flex-col gap-2.5 items-start justify-center px-3.5 py-3 relative w-full">
+                          <input
+                            type="text"
+                            className="w-full bg-transparent text-white outline-none font-['Inter:Regular',_sans-serif] text-[15px] tracking-[-0.15px]"
+                            placeholder="Last Name"
+                            value={formData.lastName}
+                            onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="bg-[rgba(255,255,255,0.05)] order-3 relative rounded-[5px] shrink-0 w-full"
+                    data-name="Email"
+                  >
+                    <div className="absolute border border-[rgba(255,255,255,0.2)] border-solid inset-[-1px] pointer-events-none rounded-md" />
+                    <div className="flex flex-col justify-center relative size-full">
+                      <div className="box-border content-stretch flex flex-col gap-2.5 items-start justify-center px-3.5 py-3 relative w-full">
+                        <input
+                          type="email"
+                          className="w-full bg-transparent text-white outline-none font-['Inter:Regular',_sans-serif] text-[15px] tracking-[-0.15px]"
+                          placeholder="Email"
+                          value={formData.email}
+                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="bg-[rgba(255,255,255,0.05)] h-[109px] order-2 relative rounded-[5px] shrink-0 w-full"
+                    data-name="Message"
+                  >
+                    <div className="absolute border border-[rgba(255,255,255,0.2)] border-solid inset-[-1px] pointer-events-none rounded-md" />
+                    <div className="relative size-full">
+                      <div className="box-border content-stretch flex flex-col gap-2.5 h-[109px] items-start justify-start px-3.5 py-3 relative w-full">
+                        <textarea
+                          className="w-full h-full bg-transparent text-white resize-none outline-none font-['Inter:Regular',_sans-serif] text-[15px] tracking-[-0.15px]"
+                          placeholder="Message"
+                          value={formData.message}
+                          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        ></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    onClick={onSubmit}
+                    disabled={isLoading}
+                    className="bg-gradient-to-r from-[#763af5] order-1 relative rounded-[5px] shrink-0 to-[#a604f2] to-[117.18%] w-full"
+                    data-name="Submit"
+                  >
+                    <div className="flex flex-row items-center justify-center relative size-full">
+                      <div className="box-border content-stretch flex flex-row gap-2.5 items-center justify-center px-2.5 py-3 relative w-full">
+                        <div className="font-['Inter:Medium',_sans-serif] font-medium leading-[0] not-italic relative shrink-0 text-[#ffffff] text-[15px] text-left text-nowrap tracking-[-0.15px]">
+                          <p className="adjustLetterSpacing block leading-[normal] whitespace-pre">
+                            {isLoading ? "Submitting..." : "Submit"}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function BenefitsSectionTablet({ formData, setFormData, onSubmit, isLoading }) {
+  return (
+    <div className="relative size-full" data-name="Benefits section">
+      <div className="max-w-inherit relative size-full">
+        <div className="box-border content-stretch flex flex-col items-start justify-start max-w-inherit pb-[50px] pt-0 px-0 relative size-full">
+          <Frame2147236704Tablet />
+          <ContainerWrapperTablet formData={formData} setFormData={setFormData} onSubmit={onSubmit} isLoading={isLoading} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Frame2147236703Mobile() {
+  return (
+    <div className="relative rounded-lg shrink-0 w-[343px]">
+      <div className="flex flex-row justify-center relative size-full">
+        <div className="box-border content-stretch flex flex-row items-start justify-center p-[16px] relative w-[343px]">
+          <div className="basis-0 font-['Bebas_Neue:Regular',_sans-serif] grow leading-[0] min-h-px min-w-px not-italic relative shrink-0 text-[#ffffff] text-[160px] text-center tracking-[-6.8px]">
+            <p className="block leading-[0.9]">{`Contact us. `}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Frame2147236704Mobile() {
+  return (
+    <div className="box-border content-stretch flex flex-col gap-6 items-center justify-start p-0 relative shrink-0 w-full">
+      <Frame2147236703Mobile />
+    </div>
+  );
+}
+
+function FormHeadingMobile() {
+  return (
+    <div
+      className="box-border content-stretch flex flex-col gap-2 items-start justify-start leading-[0] not-italic p-0 relative shrink-0 text-[#ffffff] text-center w-full"
+      data-name="Form heading"
+    >
+      <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold relative shrink-0 text-[30px] tracking-[-0.6px] w-full">
+        <p className="block leading-[normal]">Let's talk Kortshut.</p>
+      </div>
+      <div className="font-['Inter:Regular',_sans-serif] font-normal opacity-80 relative shrink-0 text-[16px] tracking-[-0.16px] w-full">
+        <p className="block leading-[normal]">
+          This platform is shaped by the people who use it, and your feedback
+          helps us make it better for everyone. Whether you have suggestions,
+          ideas, or just want to share your experience, we're all ears. Drop us
+          a message—we'll review it and respond as soon as we can. Let's build
+          something great together.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function ContainerWrapperMobile({ formData, setFormData, onSubmit, isLoading }) {
+  return (
+    <div
+      className="backdrop-blur-[190px] backdrop-filter bg-[rgba(255,255,255,0.04)] relative rounded-[20px] shrink-0 w-full"
+      data-name="Container Wrapper"
+    >
+      <div className="absolute border-2 border-[rgba(10,13,23,0.05)] border-solid inset-0 pointer-events-none rounded-[20px]" />
+      <div className="relative size-full">
+        <div className="box-border content-stretch flex flex-col gap-[30px] items-start justify-start p-[20px] relative w-full">
+          <div className="relative shrink-0 w-full" data-name="Form wrapper">
+            <div className="relative size-full">
+              <div className="box-border content-stretch flex flex-col gap-[41px] items-start justify-start px-2 py-6 relative w-full">
+                <FormHeadingMobile />
+                <div
+                  className="box-border content-stretch flex flex-col-reverse gap-3.5 items-start justify-start p-0 relative shrink-0 w-full"
+                  data-name="Form"
+                >
+                  <div
+                    className="box-border content-stretch flex flex-row gap-3.5 items-start justify-start order-4 p-0 relative shrink-0 w-full"
+                    data-name="Names"
+                  >
+                    <div
+                      className="basis-0 bg-[rgba(255,255,255,0.05)] grow min-h-px min-w-px relative rounded-[5px] shrink-0"
+                      data-name="Lname"
+                    >
+                      <div className="absolute border border-[rgba(255,255,255,0.2)] border-solid inset-[-1px] pointer-events-none rounded-md" />
+                      <div className="flex flex-col justify-center relative size-full">
+                        <div className="box-border content-stretch flex flex-col gap-2.5 items-start justify-center px-3.5 py-3 relative w-full">
+                          <input
+                            type="text"
+                            className="w-full bg-transparent text-white outline-none font-['Inter:Regular',_sans-serif] text-[15px] tracking-[-0.15px]"
+                            placeholder="First Name"
+                            value={formData.firstName}
+                            onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="basis-0 bg-[rgba(255,255,255,0.05)] grow min-h-px min-w-px relative rounded-[5px] shrink-0"
+                      data-name="Fname"
+                    >
+                      <div className="absolute border border-[rgba(255,255,255,0.2)] border-solid inset-[-1px] pointer-events-none rounded-md" />
+                      <div className="flex flex-col justify-center relative size-full">
+                        <div className="box-border content-stretch flex flex-col gap-2.5 items-start justify-center px-3.5 py-3 relative w-full">
+                          <input
+                            type="text"
+                            className="w-full bg-transparent text-white outline-none font-['Inter:Regular',_sans-serif] text-[15px] tracking-[-0.15px]"
+                            placeholder="Last Name"
+                            value={formData.lastName}
+                            onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="bg-[rgba(255,255,255,0.05)] order-3 relative rounded-[5px] shrink-0 w-full"
+                    data-name="Email"
+                  >
+                    <div className="absolute border border-[rgba(255,255,255,0.2)] border-solid inset-[-1px] pointer-events-none rounded-md" />
+                    <div className="flex flex-col justify-center relative size-full">
+                      <div className="box-border content-stretch flex flex-col gap-2.5 items-start justify-center px-3.5 py-3 relative w-full">
+                        <input
+                          type="email"
+                          className="w-full bg-transparent text-white outline-none font-['Inter:Regular',_sans-serif] text-[15px] tracking-[-0.15px]"
+                          placeholder="Email"
+                          value={formData.email}
+                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="bg-[rgba(255,255,255,0.05)] h-[109px] order-2 relative rounded-[5px] shrink-0 w-full"
+                    data-name="Message"
+                  >
+                    <div className="absolute border border-[rgba(255,255,255,0.2)] border-solid inset-[-1px] pointer-events-none rounded-md" />
+                    <div className="relative size-full">
+                      <div className="box-border content-stretch flex flex-col gap-2.5 h-[109px] items-start justify-start px-3.5 py-3 relative w-full">
+                        <textarea
+                          className="w-full h-full bg-transparent text-white resize-none outline-none font-['Inter:Regular',_sans-serif] text-[15px] tracking-[-0.15px]"
+                          placeholder="Message"
+                          value={formData.message}
+                          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        ></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    onClick={onSubmit}
+                    disabled={isLoading}
+                    className="bg-gradient-to-r from-[#763af5] order-1 relative rounded-[5px] shrink-0 to-[#a604f2] to-[117.18%] w-full"
+                    data-name="Submit"
+                  >
+                    <div className="flex flex-row items-center justify-center relative size-full">
+                      <div className="box-border content-stretch flex flex-row gap-2.5 items-center justify-center px-2.5 py-3 relative w-full">
+                        <div className="font-['Inter:Medium',_sans-serif] font-medium leading-[0] not-italic relative shrink-0 text-[#ffffff] text-[15px] text-left text-nowrap tracking-[-0.15px]">
+                          <p className="adjustLetterSpacing block leading-[normal] whitespace-pre">
+                            {isLoading ? "Submitting..." : "Submit"}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function BenefitsSectionMobile({ formData, setFormData, onSubmit, isLoading }) {
+  return (
+    <div className="relative size-full" data-name="Benefits section">
+      <div className="max-w-inherit relative size-full">
+        <div className="box-border content-stretch flex flex-col items-start justify-start max-w-inherit pb-[50px] pt-0 px-4 relative size-full">
+          <Frame2147236704Mobile />
+          <ContainerWrapperMobile formData={formData} setFormData={setFormData} onSubmit={onSubmit} isLoading={isLoading} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function BenefitsSection({ notionDatabaseId = "", notionApiKey = "" }) {
+  const { width } = useActiveBreakpoint();
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    message: "",
+  });
+  const [isLoading, setIsLoading] = useState(false);
+
+  const validateForm = () => {
+    if (!formData.firstName) {
+      toast.error("Please enter your first name");
+      return false;
+    }
+    if (!formData.lastName) {
+      toast.error("Please enter your last name");
+      return false;
+    }
+    if (!formData.email) {
+      toast.error("Please enter your email");
+      return false;
+    }
+    if (!formData.email.includes("@")) {
+      toast.error("Please enter a valid email");
+      return false;
+    }
+    if (!formData.message) {
+      toast.error("Please enter a message");
+      return false;
+    }
+    return true;
+  };
+
+  const handleSubmit = async () => {
+    if (!validateForm()) return;
+    
+    setIsLoading(true);
+    
+    try {
+      // Prepare data for Notion
+      const notionData = {
+        parent: { database_id: notionDatabaseId },
+        properties: {
+          Name: {
+            title: [
+              {
+                text: {
+                  content: `${formData.firstName} ${formData.lastName}`
+                }
+              }
+            ]
+          },
+          Email: {
+            email: formData.email
+          },
+          Message: {
+            rich_text: [
+              {
+                text: {
+                  content: formData.message
+                }
+              }
+            ]
+          }
+        }
+      };
+      
+      // This would be the actual API call to Notion
+      // In a real implementation, this would be a fetch request to a backend endpoint
+      // that handles the Notion API integration
+      
+      // Mock the API call for demonstration
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      // Reset the form after successful submission
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        message: "",
+      });
+      
+      toast.success("Form submitted successfully!");
+    } catch (error) {
+      console.error("Error submitting to Notion:", error);
+      toast.error("Failed to submit form. Please try again later.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  if (width < 800) {
+    return <BenefitsSectionMobile formData={formData} setFormData={setFormData} onSubmit={handleSubmit} isLoading={isLoading} />;
+  }
+  if (width < 1280) {
+    return <BenefitsSectionTablet formData={formData} setFormData={setFormData} onSubmit={handleSubmit} isLoading={isLoading} />;
+  }
+  return <BenefitsSectionDesktop formData={formData} setFormData={setFormData} onSubmit={handleSubmit} isLoading={isLoading} />;
+}
+
+export default BenefitsSection;
+
+defineProperties(BenefitsSection, {
+  notionDatabaseId: {
+    label: "Notion Database ID",
+    type: "string",
+    defaultValue: ""
+  },
+  notionApiKey: {
+    label: "Notion API Key",
+    type: "string",
+    defaultValue: ""
+  }
+});
+
